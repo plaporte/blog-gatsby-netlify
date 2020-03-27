@@ -10,7 +10,7 @@ const BlogpostLayout = ({ row, data }) => {
   return (
     <div>
       <SEO
-        title={innertext(post.title)}
+        title={innertext(post.title)} 
         description={innertext(post.excerpt)}
         image={post.jetpack_featured_media_url}
         keywords={post.categories.map(res => res.name).join(', ')}
