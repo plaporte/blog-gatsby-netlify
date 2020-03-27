@@ -11,15 +11,15 @@ module.exports = {
     description: `Self tracking my learning`,
     keywords: `gatsby, react, gatsbyjs, bootstrap, wordpress, learning project`,
     image: `/static/gatsby.jpg`,
-    url: `https://www.gatsbyjs.org/`,
+    url: `https://www.gatsbyjs.org/`
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `${__dirname}/src/`,
-      },
+        path: `${__dirname}/src/`
+      }
     },
     { resolve: `gatsby-transformer-remark` },
     {
@@ -27,11 +27,23 @@ module.exports = {
       options: {
         baseUrl: `philslearningblog.wordpress.com`,
         protocol: `http`,
-        hostingWPCOM: true,
-      },
+        hostingWPCOM: true
+      }
     },
     `gatsby-plugin-react-helmet`,
-  ],
-}
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Phil's learning blog`,
+        short_name: `LearningBlog`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#fff`,
+        display: `standalone`
+      }
+    },
+    `gatsby-plugin-offline`,
+  ]
+};
 
 
